@@ -57,7 +57,7 @@ function exibirProdutos() {
     disponivelP.textContent = `Disponível: ${produto.disponivel ? "Sim" : "Não"}`;
 
     produtoDiv.appendChild(nomeProduto);
-    produtoDiv.appendChild(precoP);
+    produtoDiv.appendChild(precoP); 
     produtoDiv.appendChild(disponivelP);
 
     listaProdutos.appendChild(produtoDiv);
