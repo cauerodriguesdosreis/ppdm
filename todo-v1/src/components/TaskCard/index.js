@@ -1,5 +1,5 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-
+import { View, Text, TouchableOpacity } from 'react-native';
+import { styles } from './style';
 import { theme } from '../../styles/global';
 
 export default function TaskCard({item, onDelete, onEdit}){
@@ -17,16 +17,16 @@ export default function TaskCard({item, onDelete, onEdit}){
                 <Text style={[styles.badge, { color: priorityColor }]}> ● { item.priority }
                 </Text>
                 <Text style={styles.date}>
-                    { item.start } - { item.end }
+                    { item.startDate || 'N/A' } - { item.endDate || 'N/A' }
                 </Text>
             </View>
 
             <View style={styles.actions}>
                 <TouchableOpacity onPress = { onEdit }>
-                    <Text style={styles.icon}></Text>
+                    <Text style={styles.icon}>✎</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress = { onDelete }>
-                    <Text style={styles.icon}></Text>
+                    <Text style={styles.icon}>🗑</Text>
                 </TouchableOpacity>
             </View>
         </View>
